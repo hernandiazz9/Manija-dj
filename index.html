@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MANIJA DJ</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <title>MANIJA - Landing Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
-        /* Reseteo de estilos básicos */
         * {
             margin: 0;
             padding: 0;
@@ -16,136 +16,96 @@
 
         body, html {
             height: 100%;
-            font-family: 'Montserrat', sans-serif;
-            background-color: #121212; /* Fondo oscuro general */
-            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            background-color: #000;
+            overflow: hidden; /* Evita el scroll */
+        }
+
+        .background-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* Usamos tu imagen de GitHub */
+            background-image: url('IMG_5370.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
-        /* Contenedor principal de la landing page */
-        .landing-container {
-            /* Usamos la imagen de la consola como fondo */
-            background-image: url('https://replicate.delivery/xezq/l60VfI88aI77H5U55e512R3417V50E2E12H415R17V11H18E2E/out-0.png');
-            background-size: cover;
-            background-position: center;
-            width: 90%;
-            max-width: 1200px;
-            aspect-ratio: 16 / 9; /* Mantiene una proporción panorámica */
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        /* Capa oscura opcional para que el texto resalte más si la imagen es muy clara */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4); 
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
         }
 
-        /* Capa oscura para mejorar la legibilidad del texto */
-        .landing-container::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.4); /* Oscurece el fondo */
-            z-index: 1;
-        }
-
-        /* Contenido principal por encima de la capa oscura */
         .content {
-            position: relative;
-            z-index: 2;
+            text-align: center;
+            z-index: 10;
         }
 
-        /* Título principal */
-        .title {
-            font-size: 6vw; /* Tamaño responsivo */
-            font-weight: 700;
+        h1 {
+            color: #fff;
+            font-size: 8rem; /* Tamaño grande para MANIJA */
+            letter-spacing: 5px;
+            margin-bottom: 20px;
             text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-bottom: 40px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
         }
 
-        /* Contenedor de los botones de redes sociales */
-        .social-buttons {
+        .social-icons {
             display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
+            gap: 25px;
             justify-content: center;
         }
 
-        /* Estilo de cada botón */
-        .social-btn {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 60px;
-            height: 60px;
-            border: 2px solid #ffffff;
-            border-radius: 12px;
-            color: #ffffff;
-            font-size: 24px;
+        .social-icons a {
+            color: #fff;
+            font-size: 2.5rem;
             text-decoration: none;
-            transition: all 0.3s ease;
-            background-color: transparent;
+            transition: transform 0.3s ease, opacity 0.3s ease;
         }
 
-        /* Efecto hover al pasar el ratón por encima */
-        .social-btn:hover {
-            background-color: #ffffff;
-            color: #121212;
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+        .social-icons a:hover {
+            transform: scale(1.2);
+            opacity: 0.8;
         }
 
-        /* Ajustes para pantallas pequeñas */
+        /* Responsivo para móviles */
         @media (max-width: 768px) {
-            .landing-container {
-                width: 95%;
-                aspect-ratio: auto;
-                padding: 60px 20px;
+            h1 {
+                font-size: 4rem;
             }
-
-            .title {
-                font-size: 40px;
-                margin-bottom: 30px;
-            }
-
-            .social-btn {
-                width: 50px;
-                height: 50px;
-                font-size: 20px;
+            .social-icons a {
+                font-size: 2rem;
             }
         }
     </style>
 </head>
 <body>
 
-    <div class="landing-container">
-        <div class="content">
-            <h1 class="title">MANIJA</h1>
-            <div class="social-buttons">
-                <a href="#" class="social-btn" aria-label="Instagram">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="#" class="social-btn" aria-label="YouTube">
-                    <i class="fab fa-youtube"></i>
-                </a>
-                <a href="#" class="social-btn" aria-label="Spotify">
-                    <i class="fab fa-spotify"></i>
-                </a>
-                <a href="#" class="social-btn" aria-label="SoundCloud">
-                    <i class="fab fa-soundcloud"></i>
-                </a>
-                <a href="#" class="social-btn" aria-label="Apple Music">
-                    <i class="fab fa-apple"></i>
-                </a>
+    <div class="background-container">
+        <div class="overlay">
+            <div class="content">
+                <h1>MANIJA</h1>
+                
+                <div class="social-icons">
+                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-spotify"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-soundcloud"></i></a>
+                </div>
             </div>
         </div>
     </div>
